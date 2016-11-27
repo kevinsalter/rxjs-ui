@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["airbnb", "eslint:recommended"],
+  "rules": {
+    "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
+    "eqeqeq": "error",
+    "complexity": ["error", 10],
+    "no-implicit-globals": "error",
+    "no-var": "error",
+    "comma-spacing": "error",
+    "no-duplicate-imports": "error",
+    "prefer-const": "error",
+    "import/extensions": [0],
+    "import/no-extraneous-dependencies": ["warn", {"devDependencies": true}],
+  }
+}
