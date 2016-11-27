@@ -1,10 +1,11 @@
 {
-  "name": "starter",
+  "name": "rxjs-ui",
   "version": "1.0.0",
-  "description": "crimson taurus for js fatigue",
+  "description": "UI examples using RxJS",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "Kevin Salter <kevinsalter.developer@gmail.com> (http://kevinsalter.me/)",
   "license": "MIT",
@@ -27,7 +28,14 @@
     "eslint": "3.11.0",
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-plugin-import": "2.2.0",
+    "git-scripts": "0.2.1",
+    "surge": "0.18.0",
     "webpack": "1.13.3",
     "webpack-dev-server": "1.16.2"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "npm run build && surge --project ./ --domain rxjs-ui.surge.sh"
+    }
   }
 }
