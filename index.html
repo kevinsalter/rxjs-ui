@@ -3,29 +3,30 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="An example of using RxJS to show/hide video controls">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
+    <link rel="stylesheet" href="./main.css" />
     <title>RxJS UI</title>
 </head>
 
 <body>
     <!-- video credit: https://videos.pexels.com/videos/coffee-at-the-morning-466 -->
     <div class="video-wrapper">
-        <video id="coffee-video" width="650" loop poster="./video/coffee.png" >
+        <video id="coffee-video" class="coffee-video" width="650" loop poster="./video/coffee.png" >
           <source src="./video/coffee.webm" type="video/webm">
           <source src="./video/coffee.mp4" type="video/mp4">
           <source src="./video/coffee.ogv" type="video/ogg">
           Your browser doesn't support HTML5 video tag.
         </video>
-    </div>
 
-    <button id="play">Play</button>
-    <button id="pause">Pause</button>
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+    </div>
 
 
     <script src="./bundle.js"></script>
