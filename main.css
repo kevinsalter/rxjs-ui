@@ -4,10 +4,40 @@ body {
 
 .video-wrapper {
     margin: 50px auto 0;
+    overflow: hidden;
+    padding-right: 30px;
+    position: relative;
     width: 650px;
 }
 
 .coffee-video {
     border: 14px solid whitesmoke;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.video-controls-base-styles {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    bottom: -50px;
+    cursor: pointer;
+    opacity: 0;
+    padding: 6px 10px;
+    position: absolute;
+}
+
+.video-controls-play {
+    left: 25px;
+    transition: 150ms cubic-bezier(.87, -.41, .19, 1.44);
+}
+
+.video-controls-pause {
+    left: 60px;
+    transition: 150ms cubic-bezier(.87, -.41, .19, 1.44) 60ms;
+}
+
+.video-controls-play.visible,
+.video-controls-pause.visible {
+    bottom: 30px;
+    opacity: 100;
 }
