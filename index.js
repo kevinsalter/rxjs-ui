@@ -1,7 +1,6 @@
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/observable/interval'
-import 'rxjs/add/operator/take'
+const videoPlayer = document.getElementById('coffee-video')
+const playButton = document.getElementById('play')
+const pauseButton = document.getElementById('pause')
 
-
-Observable.interval(1000).take(10).subscribe(x => console.log(x))
-document.getElementById('root').textContent = 'i\'m alive'
+playButton.addEventListener('click', () => videoPlayer.play());
+pauseButton.addEventListener('click', () => videoPlayer.pause());

@@ -14,7 +14,19 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div class="video-wrapper">
+        <video id="coffee-video" width="650" loop poster="./video/coffee.png" >
+          <source src="./video/coffee.webm" type="video/webm">
+          <source src="./video/coffee.mp4" type="video/mp4">
+          <source src="./video/coffee.ogv" type="video/ogg">
+          Your browser doesn't support HTML5 video tag.
+        </video>
+    </div>
+
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+
+
     <script src="./bundle.js"></script>
 </body>
 </html>
