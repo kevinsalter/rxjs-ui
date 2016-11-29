@@ -1,3 +1,27 @@
+/**
+ * RxJS video player controls
+ */
+const rxVideoPlayer = document.getElementById('rx-coffee-video')
+const rxPlayButton = document.getElementById('rx-play')
+const rxPauseButton = document.getElementById('rx-pause')
+
+const showRxControls = () => {
+    rxPlayButton.classList.add('visible')
+    rxPauseButton.classList.add('visible')
+}
+
+const hideRxControls = () => {
+    rxPlayButton.classList.remove('visible')
+    rxPauseButton.classList.remove('visible')
+}
+
+
+
+
+
+/**
+ * JS video player controls
+ */
 const jsVideoPlayer = document.getElementById('js-coffee-video')
 const jsPlayButton = document.getElementById('js-play')
 const jsPauseButton = document.getElementById('js-pause')
