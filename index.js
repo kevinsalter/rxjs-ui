@@ -1,22 +1,37 @@
-const videoPlayer = document.getElementById('coffee-video')
-const playButton = document.getElementById('play')
-const pauseButton = document.getElementById('pause')
+const jsVideoPlayer = document.getElementById('js-coffee-video')
+const jsPlayButton = document.getElementById('js-play')
+const jsPauseButton = document.getElementById('js-pause')
 
-const addVisibleClass = () => {
-    playButton.classList.add('visible')
-    pauseButton.classList.add('visible')
+let userActivity = false
+
+const showJsControls = () => {
+    jsPlayButton.classList.add('visible')
+    jsPauseButton.classList.add('visible')
 }
 
-const removeVisibleClass = () => {
-    playButton.classList.remove('visible')
-    pauseButton.classList.remove('visible')
+const hideJsControls = () => {
+    jsPlayButton.classList.remove('visible')
+    jsPauseButton.classList.remove('visible')
 }
 
-videoPlayer.addEventListener('mouseenter', addVisibleClass)
-videoPlayer.addEventListener('mouseleave', removeVisibleClass)
+const resetDelay = () => {
+    clearTimeout(inactivityTimeout)
+    const inactivityTimeout = setTimeout(function() {
+        userActivity = false
+    }, 2000)
+}
 
-playButton.addEventListener('mousemove', addVisibleClass)
-pauseButton.addEventListener('mousemove', addVisibleClass)
+// this code from http://blog.videojs.com/Hiding-and-Showing-Video-Player-Controls/
+setInterval(function() {
+    if (userActivity) resetDelay()
+    userActivity ? showJsControls() : hideJsControls()
+}, 250)
 
-playButton.addEventListener('click', () => videoPlayer.play())
-pauseButton.addEventListener('click', () => videoPlayer.pause())
+jsPlayButton.addEventListener('click', () => jsVideoPlayer.play())
+jsPauseButton.addEventListener('click', () => jsVideoPlayer.pause())
+jsVideoPlayer.addEventListener('mouseout', () => userActivity = false)
+
+const jsVideoPlayerElements = [jsVideoPlayer, jsPlayButton, jsPauseButton]
+jsVideoPlayerElements.forEach((el) =>
+    el.addEventListener('mousemove', () => userActivity = true)
+)
